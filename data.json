@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Air Runner X1",
+    "description": "Lightweight and breathable running shoes for everyday wear. Lightweight and breathable running shoes for everyday wear.",
+    "price": 120000,
+    "discount": 0.2,
+    "images": {
+      "large": "/images/image-product-1.jpg",
+      "thumbnail": "/images/image-product-1-thumbnail.jpg"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Urban Sneak Pro",
+    "description": "Premium sneakers optimized for urban lifestyle and comfort.",
+    "price": 98000,
+    "discount": 0.15,
+    "images": {
+      "large": "/images/image-product-2.jpg",
+      "thumbnail": "/images/image-product-2-thumbnail.jpg"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Trail Master 300",
+    "description": "Durable trail shoes offering stability on rough terrains.",
+    "price": 135000,
+    "discount": 0.25,
+    "images": {
+      "large": "/images/image-product-3.jpg",
+      "thumbnail": "/images/image-product-3-thumbnail.jpg"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Classic Court V2",
+    "description": "Minimalist court-style sneakers designed for everyday comfort.",
+    "price": 89000,
+    "discount": 0.1,
+    "images": {
+      "large": "/images/image-product-4.jpg",
+      "thumbnail": "/images/image-product-4-thumbnail.jpg"
+    }
+  }
+]

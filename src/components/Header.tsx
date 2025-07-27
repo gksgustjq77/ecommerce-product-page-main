@@ -4,7 +4,7 @@ import UserMenu from "./UserMenu";
 
 const Header: React.FC = () => {
   return (
-    <header className="mx-auto flex min-w-[1000px] max-w-[1200px] items-center justify-between border-b px-6">
+    <header className="mx-auto flex min-w-[1000px] items-center justify-between border-b">
       {/* 좌측: 로고 */}
 
       {/* 중앙: 메뉴 영역 고정폭 */}
