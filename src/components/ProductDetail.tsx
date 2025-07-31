@@ -19,8 +19,18 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, selected }) => {
     const itemToAdd = { ...product[selected], count };
 
     const duplication = cartItems.find((e) => e.id === itemToAdd.id);
-    if (duplication) return false;
-    setCartItems([...cartItems, itemToAdd]);
+    if (duplication) {
+      const updateCart = cartItems.map((prev) => {
+        if (prev.id === itemToAdd.id) {
+          return { ...prev, count: (prev.count! += count) };
+        } else {
+          return { ...prev };
+        }
+      });
+      setCartItems(updateCart);
+    } else {
+      setCartItems([...cartItems, itemToAdd]);
+    }
   };
 
   useEffect(() => {
