@@ -28,7 +28,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* 우측: UserMenu 영역 고정폭 */}
-      <div className="flex w-[150px] justify-end">
+      <div className="relative flex w-[150px] justify-end">
         <UserMenu />
       </div>
     </header>
