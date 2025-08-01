@@ -6,12 +6,16 @@ import CartInfoModal from "./CartInfoModal";
 
 const UserMenu: React.FC = () => {
   const [cartItem, _] = useAtom(cartAtom);
+  const [cartModalOpen, setCartModalOpen] = useState<boolean>(false);
 
   useEffect(() => {}, [cartItem]);
 
   return (
     <div className="flex items-center gap-8">
-      <div className="relative cursor-pointer text-gray-700 hover:text-orange-500">
+      <div
+        className="relative cursor-pointer text-gray-700 hover:text-orange-500"
+        onClick={() => setCartModalOpen(!cartModalOpen)}
+      >
         <img
           src="/images/icon-cart.svg"
           alt="cart"
@@ -34,7 +38,7 @@ const UserMenu: React.FC = () => {
         />
       </Link>
       <div className="absolute right-0 top-full z-10 mt-4 w-[320px] max-w-[420px]">
-        <CartInfoModal cartItem={cartItem}></CartInfoModal>
+        <CartInfoModal cartItem={cartItem} open={cartModalOpen}></CartInfoModal>
       </div>
     </div>
   );

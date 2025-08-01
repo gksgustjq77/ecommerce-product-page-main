@@ -2,9 +2,11 @@ import type { ProductType } from "../type/product/product";
 
 interface CartInfoModalProps {
   cartItem: ProductType[];
+  open: boolean;
 }
 
-const CartInfoModal: React.FC<CartInfoModalProps> = ({ cartItem }) => {
+const CartInfoModal: React.FC<CartInfoModalProps> = ({ cartItem, open }) => {
+  if (!open) return false;
   const countPrice = (cartItem: ProductType) => {
     return (cartItem.price - cartItem.price * cartItem.discount).toLocaleString(
       "ko-KR",
