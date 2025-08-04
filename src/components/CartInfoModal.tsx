@@ -1,11 +1,21 @@
+import { useAtom } from "jotai";
 import type { ProductType } from "../type/product/product";
+import AddButton from "./AddButton";
+import { cartAtom } from "../store/cartAtom";
 
 interface CartInfoModalProps {
   cartItem: ProductType[];
   open: boolean;
+  deleteCartItem: (id: number) => void;
 }
 
-const CartInfoModal: React.FC<CartInfoModalProps> = ({ cartItem, open }) => {
+const CartInfoModal: React.FC<CartInfoModalProps> = ({
+  cartItem,
+  open,
+  deleteCartItem,
+}) => {
+  const [_, setCartItems] = useAtom(cartAtom);
+
   if (!open) return false;
   const countPrice = (cartItem: ProductType) => {
     return (cartItem.price - cartItem.price * cartItem.discount).toLocaleString(
@@ -51,13 +61,26 @@ const CartInfoModal: React.FC<CartInfoModalProps> = ({ cartItem, open }) => {
                   </div>
                 </div>
                 <div>
-                  <img src="/images/icon-delete.svg" alt="delete"></img>
+                  <img
+                    src="/images/icon-delete.svg"
+                    alt="delete"
+                    className="cursor-pointer"
+                    onClick={() => deleteCartItem(e.id)}
+                  ></img>
                 </div>
               </div>
             );
           })}
         </div>
       )}
+      <div className="p-4">
+        <AddButton
+          title={"Checkout"}
+          addCart={() => {
+            setCartItems([]);
+          }}
+        ></AddButton>
+      </div>
     </div>
   );
 };

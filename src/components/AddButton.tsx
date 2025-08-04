@@ -1,8 +1,10 @@
 interface AddButtonProps {
   addCart: () => void;
+  title?: string;
+  icon?: string;
 }
 
-const AddButton: React.FC<AddButtonProps> = ({ addCart }) => {
+const AddButton: React.FC<AddButtonProps> = ({ addCart, title, icon }) => {
   return (
     <>
       <div
@@ -10,9 +12,9 @@ const AddButton: React.FC<AddButtonProps> = ({ addCart }) => {
         onClick={addCart}
       >
         <button className="flex items-center gap-4">
-          <img src="/images/icon-cart.svg" alt="add" className=""></img>
+          {icon && <img src={icon} alt="add" className=""></img>}
           <span className="text-neutral-very-dark-blue font-bold">
-            Add to cart
+            {title || ""}
           </span>
         </button>
       </div>

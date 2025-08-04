@@ -16,8 +16,10 @@ const ThumbnailList: React.FC<ThumbnailListProps> = ({
           key={i}
           src={img}
           onClick={() => onSelect(i)}
-          className={`h-20 w-[25%] cursor-pointer rounded-lg border-2 transition ${
-            i === selected ? "border-orange-500" : "border-transparent"
+          className={`h-[100px] w-[25%] cursor-pointer rounded-lg border-2 transition ${
+            i === selected
+              ? "border-orange-500 opacity-60"
+              : "border-transparent"
           }`}
           alt={`Thumbnail ${i}`}
         />

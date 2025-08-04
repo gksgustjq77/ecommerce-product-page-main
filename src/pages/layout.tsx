@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
-import MobileHeader from "../components/MobileHeader";
+import MobileHeader from "../components/mobile/MobileHeader";
 
 const Layout = () => {
   return (
@@ -12,7 +12,7 @@ const Layout = () => {
         <Header />
       </div>
 
-      <main className="min-h-screen w-full flex-1">
+      <main className="flex items-center justify-center">
         <Outlet />
       </main>
     </>

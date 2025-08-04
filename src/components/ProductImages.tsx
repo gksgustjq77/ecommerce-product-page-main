@@ -23,9 +23,8 @@ const ProductImages: React.FC<ProductImagesProps> = ({
   onSelect,
 }) => {
   return (
-    <div className="flex w-full flex-col gap-4 sm:p-0 md:flex-row lg:w-[50%] lg:p-16">
+    <div className="flex w-full flex-col gap-4 sm:p-0 md:flex-row lg:w-[50%]">
       <div className="block md:hidden">
-        {/* ✅ 모바일에서만 보임 */}
         <MobileCarousel
           images={product.map((e) => e.images.large)}
           selected={selected}

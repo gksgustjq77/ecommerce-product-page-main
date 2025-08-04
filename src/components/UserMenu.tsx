@@ -1,15 +1,18 @@
 import { useAtom } from "jotai";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { cartAtom } from "../store/cartAtom";
 import CartInfoModal from "./CartInfoModal";
 
 const UserMenu: React.FC = () => {
-  const [cartItem, _] = useAtom(cartAtom);
+  const [cartItem, setCartItem] = useAtom(cartAtom);
   const [cartModalOpen, setCartModalOpen] = useState<boolean>(false);
 
-  useEffect(() => {}, [cartItem]);
+  const deleteCartItem = (id: number) => {
+    const deleteCartById = cartItem.filter((e) => e.id !== id);
 
+    setCartItem(deleteCartById);
+  };
   return (
     <div className="flex items-center gap-8">
       <div
@@ -27,10 +30,7 @@ const UserMenu: React.FC = () => {
         </span>
       </div>
 
-      <Link
-        to="/profile"
-        className="block h-10 w-10 overflow-hidden rounded-full"
-      >
+      <Link to="/" className="block h-10 w-10 overflow-hidden rounded-full">
         <img
           src="/images/image-avatar.png"
           alt="User Profile"
@@ -38,7 +38,11 @@ const UserMenu: React.FC = () => {
         />
       </Link>
       <div className="absolute right-0 top-full z-10 mt-4 w-[320px] max-w-[420px]">
-        <CartInfoModal cartItem={cartItem} open={cartModalOpen}></CartInfoModal>
+        <CartInfoModal
+          cartItem={cartItem}
+          open={cartModalOpen}
+          deleteCartItem={deleteCartItem}
+        ></CartInfoModal>
       </div>
     </div>
   );

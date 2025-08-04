@@ -34,10 +34,10 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, selected }) => {
   };
 
   useEffect(() => {
-    console.log("cartItems ", cartItems);
-  }, [cartItems]);
+    setCount(0);
+  }, [selected]);
   return (
-    <div className="flex w-full flex-col gap-4 p-8 text-left lg:w-[50%] lg:p-16">
+    <div className="flex w-full flex-col gap-4 p-8 text-left lg:w-[50%] lg:p-0">
       <div className="text-neutral-grayish-blue font-semibold">
         sneaker company
       </div>
@@ -63,9 +63,13 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, selected }) => {
         ).toLocaleString("ko-KR")}
       </div>
 
-      <div className="mt-10 gap-4 lg:flex">
+      <div className="mt-10 flex flex-col gap-4 lg:flex-row">
         <ProductCount count={count} updateCount={setCount}></ProductCount>
-        <AddButton addCart={handlerCart}></AddButton>
+        <AddButton
+          addCart={handlerCart}
+          title={"Add to cart"}
+          icon={"/images/icon-cart.svg"}
+        ></AddButton>
       </div>
     </div>
   );

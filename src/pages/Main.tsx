@@ -8,7 +8,7 @@ const Main: React.FC = () => {
   const data = productData;
 
   return (
-    <div className="flex w-full flex-col lg:w-auto lg:flex-row">
+    <div className="flex w-full flex-col lg:mt-[10vh] lg:w-auto lg:flex-row lg:gap-[10%]">
       <ProductImages
         product={data}
         selected={selected}
