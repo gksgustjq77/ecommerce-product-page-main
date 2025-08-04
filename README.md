@@ -9,9 +9,9 @@
 ## PC 💻
 
 <p align="left">
-  <img src="./src/assets/screenshot/pc-lg_1.png" width="200" height="400" />
-  <img src="./src/assets/screenshot/pc-lg_2.png" width="200" height="400" />
-  <img src="./src/assets/screenshot/pc-lg_3.png" width="200" height="400" />
+  <img src="./src/assets/screenshot/pc-lg_1.png" width="300"  />
+  <img src="./src/assets/screenshot/pc-lg_2.png" width="300" />
+  <img src="./src/assets/screenshot/pc-lg_3.png" width="300" />
 </p>
 
 ## Phone 📱
