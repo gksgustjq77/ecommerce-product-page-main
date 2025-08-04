@@ -4,7 +4,7 @@
 
 ## Live site
 
-- **Vercal**: https://conference-ticket-generator-main-lac.vercel.app/
+- **Vercal**: https://ecommerce-product-page-main-kf72f909z.vercel.app
 
 ## PC 💻
 
